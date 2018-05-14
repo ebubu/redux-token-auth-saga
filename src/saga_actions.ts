@@ -63,3 +63,7 @@ export const sagaVerifyTokenRequest = (
   type: SAGA_VERIFY_TOKEN_REQUEST_SENT,
   payload: { verificationParams }
 })
+
+export type sagaRegistrationAction = typeof sagaRegistrationRequest
+export type sagaSignInAction = typeof sagaSignInRequest
+export type sagaVerifyTokenAction = typeof sagaVerifyTokenRequest

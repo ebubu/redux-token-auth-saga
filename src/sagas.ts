@@ -73,9 +73,10 @@ interface SagaWatchersExport {
   readonly verifyCredentialsWatcher: SagaActionWatcher
 }
 
-const generateAuthSagaWatchers = (
+export type SagaWatchersGeneratorExport = (
   config: { [key: string]: any }
-): SagaWatchersExport => {
+) => SagaWatchersExport
+const generateAuthSagaWatchers: SagaWatchersGeneratorExport = (config) => {
   const {
     registerUser,
     verifyToken,
