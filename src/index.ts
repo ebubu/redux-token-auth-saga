@@ -7,6 +7,10 @@ import {
   sagaVerifyTokenRequest,
   sagaSignInRequest
 } from './saga_actions'
+import {
+  signOutRequestSent,
+  verifyCredentialSent
+} from './actions'
 
 export {
   generateAuthActions,
@@ -15,5 +19,7 @@ export {
   generateAuthSagaWatchers,
   sagaRegistrationRequest,
   sagaVerifyTokenRequest,
-  sagaSignInRequest
+  sagaSignInRequest,
+  signOutRequestSent,
+  verifyCredentialSent
 }

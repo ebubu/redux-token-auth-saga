@@ -3,6 +3,8 @@ import {
   ActionsGeneratorExport,
   GenerateRequireSignInWrapperConfig,
   RequireSignInWrapper,
+  verifyCredentialSentAction,
+  SignOutRequestSentAction,
 } from './src/types'
 import { SagaWatchersGeneratorExport } from './src/sagas';
 import { sagaRegistrationAction, sagaSignInAction, sagaVerifyTokenAction } from './src/saga_actions';
@@ -17,4 +19,6 @@ export const generateAuthSagaWatchers: SagaWatchersGeneratorExport
 
 export const sagaRegistrationRequest: sagaRegistrationAction
 export const sagaSignInRequest: sagaSignInAction
+export const signOutRequestSent:SignOutRequestSentAction 
+export const verifyCredentialSent: verifyCredentialSentAction
 export const sagaVerifyTokenRequest: sagaVerifyTokenAction

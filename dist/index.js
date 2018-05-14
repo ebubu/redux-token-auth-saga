@@ -12,4 +12,7 @@ var saga_actions_1 = require("./saga_actions");
 exports.sagaRegistrationRequest = saga_actions_1.sagaRegistrationRequest;
 exports.sagaVerifyTokenRequest = saga_actions_1.sagaVerifyTokenRequest;
 exports.sagaSignInRequest = saga_actions_1.sagaSignInRequest;
+var actions_2 = require("./actions");
+exports.signOutRequestSent = actions_2.signOutRequestSent;
+exports.verifyCredentialSent = actions_2.verifyCredentialSent;
 //# sourceMappingURL=index.js.map
