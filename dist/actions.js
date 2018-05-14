@@ -88,6 +88,12 @@ exports.signOutRequestSucceeded = function () { return ({
 exports.signOutRequestFailed = function () { return ({
     type: types_1.SIGNOUT_REQUEST_FAILED,
 }); };
+exports.verifyCredentialSent = function () { return ({
+    type: types_1.VERIFY_CREDENTIAL_SENT
+}); };
+exports.verifyCredentialFailed = function () { return ({
+    type: types_1.VERIFY_CREDENTIAL_FAILED
+}); };
 exports.setHasVerificationBeenAttempted = function (hasVerificationBeenAttempted) { return ({
     type: types_1.SET_HAS_VERIFICATION_BEEN_ATTEMPTED,
     payload: {

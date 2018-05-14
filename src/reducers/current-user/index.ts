@@ -15,6 +15,7 @@ import {
   SIGNOUT_REQUEST_SUCCEEDED,
   SIGNOUT_REQUEST_FAILED,
   SET_HAS_VERIFICATION_BEEN_ATTEMPTED,
+  VERIFY_CREDENTIAL_SENT,
 } from '../../types'
 import initialState from '../../initial-state'
 
@@ -24,7 +25,11 @@ const {
 
 const currentUser = (state: User = initialUser, action: ReduxAction): User => {
   switch (action.type) {
-    case REGISTRATION_REQUEST_SENT:
+    case REGISTRATION_REQUEST_SENT: {
+      return {
+        ...state,
+      }
+    }
     case VERIFY_TOKEN_REQUEST_SENT:
     case SIGNIN_REQUEST_SENT:
     case SIGNOUT_REQUEST_SENT:
@@ -84,10 +89,21 @@ const currentUser = (state: User = initialUser, action: ReduxAction): User => {
         ...state,
         isLoading: false,
       }
+    case VERIFY_CREDENTIAL_SENT:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case VERIFY_TOKEN_REQUEST_FAILED:
+      return {
+        ...state,
+        isLoading: false
+      }
     case SET_HAS_VERIFICATION_BEEN_ATTEMPTED:
       return {
         ...state,
         hasVerificationBeenAttempted: action.payload.hasVerificationBeenAttempted,
+        isLoading: false
       }
     default:
       return state

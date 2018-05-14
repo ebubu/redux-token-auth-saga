@@ -38,6 +38,10 @@ import {
   SignOutRequestSucceededAction,
   SignOutRequestFailedAction,
   SetHasVerificationBeenAttemptedAction,
+  VERIFY_CREDENTIAL_SENT,
+  verifyCredentialSentAction,
+  VERIFY_CREDENTIAL_FAILED,
+  verifyCredentialFailedAction,
 } from './types'
 import AsyncLocalStorage from './AsyncLocalStorage'
 import {
@@ -107,6 +111,14 @@ export const signOutRequestSucceeded = (): SignOutRequestSucceededAction => ({
 
 export const signOutRequestFailed = (): SignOutRequestFailedAction => ({
   type: SIGNOUT_REQUEST_FAILED,
+})
+
+export const verifyCredentialSent = (): verifyCredentialSentAction => ({
+  type: VERIFY_CREDENTIAL_SENT
+})
+
+export const verifyCredentialFailed = (): verifyCredentialFailedAction => ({
+  type: VERIFY_CREDENTIAL_FAILED
 })
 
 export const setHasVerificationBeenAttempted = (
@@ -255,5 +267,7 @@ const generateAuthActions = (config: { [key: string]: any }): ActionsExport => {
     verifyCredentials,
   }
 }
+
+
 
 export default generateAuthActions

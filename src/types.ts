@@ -80,6 +80,16 @@ export const SIGNOUT_REQUEST_SUCCEEDED: SIGNOUT_REQUEST_SUCCEEDED = 'redux-token
 export type SIGNOUT_REQUEST_FAILED = 'redux-token-auth/SIGNOUT_REQUEST_FAILED'
 export const SIGNOUT_REQUEST_FAILED: SIGNOUT_REQUEST_FAILED = 'redux-token-auth/SIGNOUT_REQUEST_FAILED'
 
+export type VERIFY_CREDENTIAL_SENT =
+'redux-token-auth/VERIFY_CREDENTIAL_SENT'
+export const VERIFY_CREDENTIAL_SENT: VERIFY_CREDENTIAL_SENT =
+'redux-token-auth/VERIFY_CREDENTIAL_SENT'
+
+export type VERIFY_CREDENTIAL_FAILED =
+'redux-token-auth/VERIFY_CREDENTIAL_FAILED'
+export const VERIFY_CREDENTIAL_FAILED: VERIFY_CREDENTIAL_FAILED =
+'redux-token-auth/VERIFY_CREDENTIAL_FAILED'
+
 export type SET_HAS_VERIFICATION_BEEN_ATTEMPTED = 'redux-token-auth/SET_HAS_VERIFICATION_BEEN_ATTEMPTED'
 export const SET_HAS_VERIFICATION_BEEN_ATTEMPTED: SET_HAS_VERIFICATION_BEEN_ATTEMPTED = 'redux-token-auth/SET_HAS_VERIFICATION_BEEN_ATTEMPTED'
 
@@ -158,6 +168,14 @@ export interface SignOutRequestFailedAction {
   readonly type: SIGNOUT_REQUEST_FAILED
 }
 
+export interface verifyCredentialSentAction {
+  readonly type: VERIFY_CREDENTIAL_SENT
+}
+
+export interface verifyCredentialFailedAction {
+  readonly type: VERIFY_CREDENTIAL_FAILED
+}
+
 export interface SetHasVerificationBeenAttemptedAction {
   readonly type: SET_HAS_VERIFICATION_BEEN_ATTEMPTED
   readonly payload: {
@@ -177,6 +195,8 @@ export type ReduxAction = RegistrationRequestSentAction
   | SignOutRequestSentAction
   | SignOutRequestSucceededAction
   | SignOutRequestFailedAction
+  | verifyCredentialSentAction
+  | verifyCredentialFailedAction
   | SetHasVerificationBeenAttemptedAction
 
 export type ReduxAsyncAction = (input?: any) => (dispatch: Dispatch<{}>) => Promise<void>
